@@ -1,0 +1,19 @@
+{
+  "name": "bitbase-backend-node",
+  "version": "1.0.0",
+  "description": "bitbase backend with node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bitbase",
+    "node",
+    "bitbase-backend",
+    "express",
+    "food ordering"
+  ],
+  "author": "Reynold",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1"
+}
