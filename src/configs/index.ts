@@ -1,3 +1,4 @@
+import { ParsedEnvVariables } from "./app.config";
 import { InitializeMongoConnection } from "./mongo.config";
 
-export { InitializeMongoConnection };
+export { InitializeMongoConnection, ParsedEnvVariables };
