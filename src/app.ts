@@ -3,6 +3,7 @@ import cors from "cors";
 import express, { type Application } from "express";
 import helmet from "helmet";
 import { ParsedEnvVariables } from "./configs";
+import { authRoutes } from "./routes";
 
 const app: Application = express();
 
@@ -24,5 +25,6 @@ app.disable("x-powered-by");
 /**
  * routes
  */
+app.use("/api/v1/auth", authRoutes);
 
 export default app;
