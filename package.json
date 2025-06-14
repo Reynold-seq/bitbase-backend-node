@@ -2,9 +2,12 @@
   "name": "bitbase-backend-node",
   "version": "1.0.0",
   "description": "bitbase backend with node js",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "ts-node-dev --poll --files src/index.ts",
+    "start": "node dist/index.js",
+    "test": "jest --watchAll --detctOpenHandles"
   },
   "keywords": [
     "bitbase",
@@ -15,5 +18,39 @@
   ],
   "author": "Reynold",
   "license": "ISC",
-  "packageManager": "pnpm@10.12.1"
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.2",
+    "winston": "^3.17.0",
+    "zod": "^3.25.64"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.0.0",
+    "supertest": "^7.1.1",
+    "ts-jest": "^29.4.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
+  }
 }
