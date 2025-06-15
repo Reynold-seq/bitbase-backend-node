@@ -1,3 +1,5 @@
+import { AuthMiddleware } from "./auth.middleware";
 import { ErrorMiddleware } from "./error.middleware";
 import { RateLimiterMiddleware } from "./rateLimiter.middleware";
-export { ErrorMiddleware, RateLimiterMiddleware };
+
+export { AuthMiddleware, ErrorMiddleware, RateLimiterMiddleware };

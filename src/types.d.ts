@@ -1,3 +1,22 @@
+import mongoose from "mongoose";
+
+interface IContext {
+  _id: mongoose.Types.ObjectId;
+  email: string;
+  firstname: string;
+  lastname: string;
+  mobile: string;
+  role: string;
+}
+
+declare global {
+  namespace Express {
+    interface Request {
+      ctx: IContext;
+    }
+  }
+}
+
 export interface IUser {
   email: string;
   password: string;

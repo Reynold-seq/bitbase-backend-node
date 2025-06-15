@@ -40,7 +40,7 @@ export const signInUserController = customAsyncWrapper(async (req: Request, res:
 
   const { user, token } = await signInUserService(body);
 
-  res.cookie("accessToeken", token, {
+  res.cookie("accessToken", token, {
     httpOnly: true,
     secure: ParsedEnvVariables.NODE_ENV === "production",
     sameSite: ParsedEnvVariables.NODE_ENV === "production" ? "none" : "strict",
@@ -68,5 +68,24 @@ export const signOutUserController = customAsyncWrapper(async (req: Request, res
     res,
     statusCode: HttpStatusCode.OK,
     message: ApiSuccessMessages.SIGN_OUT_SUCCESS,
+  });
+});
+
+/**
+ * verifyUserController function to handle user verification request.
+ * This function retrieves authenticated user from the request context
+ * and return the user data as response.
+ *
+ * @param req - The request object which contains the authenticated user data in its context.
+ * @param res - The response object which is used to send API response.
+ * @returns A Success response containing the authenticated user data
+ */
+export const verifyUserController = customAsyncWrapper(async (req: Request, res: Response) => {
+  const user = req.ctx;
+
+  sendApiResponse({
+    res,
+    statusCode: HttpStatusCode.OK,
+    data: user,
   });
 });
