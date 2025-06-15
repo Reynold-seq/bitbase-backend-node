@@ -1,3 +1,3 @@
 import { ErrorMiddleware } from "./error.middleware";
-
-export { ErrorMiddleware };
+import { RateLimiterMiddleware } from "./rateLimiter.middleware";
+export { ErrorMiddleware, RateLimiterMiddleware };

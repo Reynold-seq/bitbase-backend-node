@@ -12,4 +12,5 @@ export enum GlobalErrorMessages {
   VALIDATION_FAILED = "Validation failed. Please ensure the data is correct. ⚠️",
   JWT_EXPIRED = "JWT Token has expired. Please log in again. ⏳",
   JWT_INVALID = "JWT Token is invalid. Please log in again. 🚫",
+  RATE_LIMIT_ERROR = "You have already tried registering twice. Please wait for a while 🚫",
 }
