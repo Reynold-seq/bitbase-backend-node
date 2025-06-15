@@ -7,7 +7,7 @@
     "build": "tsc",
     "dev": "ts-node-dev --poll --files src/index.ts",
     "start": "node dist/index.js",
-    "test": "jest --watchAll --detctOpenHandles"
+    "test": "jest --watchAll --detectOpenHandles"
   },
   "keywords": [
     "bitbase",

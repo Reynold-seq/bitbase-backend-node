@@ -13,7 +13,7 @@ export const formatZodError = (error: ZodError) => {
   return errors;
 };
 
-export const ErrorHandler = (error: Error, req: Request, res: Response, next: NextFunction) => {
+export const ErrorMiddleware = (error: Error, req: Request, res: Response, next: NextFunction): any => {
   if (error instanceof SyntaxError) {
     return res.status(HttpStatusCode.FORBIDDEN).json({
       message: error.message || GlobalErrorMessages.INVALID_JSON_FORMAT,

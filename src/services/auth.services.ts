@@ -4,7 +4,7 @@ import { ParsedEnvVariables } from "../configs";
 import { ApiErrorMessages, HttpStatusCode } from "../constants";
 import { User } from "../models";
 import { customError } from "../utils";
-import { signInSchemaType, type signUpSchemaType } from "../validations";
+import { type signInSchemaType, type signUpSchemaType } from "../validations";
 
 export const signUpUserService = async (body: signUpSchemaType) => {
   const { firstname, lastname, email, password, mobile } = body;
